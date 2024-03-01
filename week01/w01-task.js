@@ -16,8 +16,8 @@ console.log(`The total is ${theTotal}`);
 // 'total' function declaration
 function total(...theNumbers) {
 	let sum = 0;
-	for (let aNumber in theNumbers) {
-		sum += aNumber; // Why do we use * 1? It implicitly converts a string to a number.
+	for (let aNumber of theNumbers) {
+		sum += aNumber; // Removed '* 1', unnecessary conversion.
 	}
-	return sum
+	return sum;
 }
