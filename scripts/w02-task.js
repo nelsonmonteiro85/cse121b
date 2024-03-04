@@ -23,7 +23,7 @@ imageElement.setAttribute('alt', `Profile image of ${fullName}`);
 let favoriteFoods = ['Pizza', 'Francesinha', 'Rojoes', 'Tripas', 'Picanha'];
 foodElement.innerHTML = favoriteFoods.join('<br>');
 
-const newFavoriteFood = 'Your New Favorite Food';
+const newFavoriteFood = 'Bola';
 favoriteFoods.push(newFavoriteFood);
 foodElement.innerHTML += `<br>${newFavoriteFood}`;
 
