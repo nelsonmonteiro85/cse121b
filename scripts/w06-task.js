@@ -1,4 +1,4 @@
-// Function to fetch weather data
+/* Function to fetch weather data */
 async function fetchWeather(location) {
     const apiKey = '5e2383d42104288b4745132157c02b09';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
@@ -14,7 +14,7 @@ async function fetchWeather(location) {
     }
 }
 
-// Function to display weather information
+/* Function to display weather information */
 function displayWeather(weatherData) {
     const weatherInfoDiv = document.getElementById('weatherInfo');
     weatherInfoDiv.innerHTML = `
@@ -26,22 +26,22 @@ function displayWeather(weatherData) {
     `;
 }
 
-// Function to show loading spinner
+/* Function to show loading spinner */
 function showLoadingSpinner() {
     document.getElementById('loader').style.display = 'block';
 }
 
-// Function to hide loading spinner
+/* Function to hide loading spinner */
 function hideLoadingSpinner() {
     document.getElementById('loader').style.display = 'none';
 }
 
-// Event listener for the button click
+/* Event listener for the button click */
 document.getElementById('getWeatherButton').addEventListener('click', async function() {
     const location = document.getElementById('locationInput').value.trim();
     if (location) {
         try {
-            showLoadingSpinner(); // Show spinner when fetching data
+            showLoadingSpinner(); /* Show spinner when fetching data */
             const weatherData = await fetchWeather(location);
             displayWeather(weatherData);
             document.title = `Weather for ${location}`;
@@ -49,12 +49,12 @@ document.getElementById('getWeatherButton').addEventListener('click', async func
             console.error(error.message);
             alert('Failed to fetch weather data. Please try again later.');
         } finally {
-            hideLoadingSpinner(); // Hide spinner after data is fetched
+            hideLoadingSpinner(); /* Hide spinner after data is fetched */
         }
     } else {
         alert('Please enter a location.');
     }
 });
 
-// Call the function to hide loading spinner on page load
+/* Call the function to hide loading spinner on page load */
 window.addEventListener('DOMContentLoaded', hideLoadingSpinner);

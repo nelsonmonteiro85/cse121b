@@ -336,7 +336,7 @@ footer {
     text-align: center;
     padding: 5px;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 80%;
     min-width: 50px;
     max-width: 400px;
@@ -358,6 +358,7 @@ footer {
     margin: 20px;
     padding: 5px 10px;
     background-color: #ff7700;
+    font-size: medium;
     color: #36ffd6;
     border: none;
     border-radius: 5px;
