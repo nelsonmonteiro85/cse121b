@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body id="Project-body">
+    <nav>
+      <ul id="menu">
+        <li><a id="toggleMenu">&equiv;</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="w01-task.html">W1 Task</a></li>
+        <li><a href="w03-task.html">W3 Task</a></li>
+        <li><a href="w04-task.html">W4 Task</a></li>
+        <li><a href="w05-task.html">W5 Task</a></li>
+        <li><a href="w06-task.html" class="active">Project</a></li>
+      </ul>
+    </nav>
+    <h1 class="Project-h1">Weather Forecast App</h1>
+    <div class="Project-container">
+        <label for="locationInput" class="Project-label">Enter Location:</label>
+        <input type="text" id="locationInput" class="Project-input" required>
+        <button id="getWeatherButton">Get Weather</button>
+        <!-- Loading spinner -->
+        <div id="loader" class="loader"></div>
+    </div>
+    <div id="weatherInfo"></div>
+    <script src="w06-task.js"></script>
+</body>
+</html>

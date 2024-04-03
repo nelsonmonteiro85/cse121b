@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Audiowide&display=swap');
+
 /* Universal Selector */
 * {
     margin: 0;
@@ -277,6 +279,111 @@ footer {
     height: auto;
     box-shadow: 0 0 30px #777;
     margin: .5rem;
+}
+
+/* _____________________________________________________________________________________________________________ */
+/* =                                                                                                           = */
+/* =                                        CSS for Project - Weather                                          = */
+/* _____________________________________________________________________________________________________________ */
+
+:root {
+    --primary-color: #2e3641;
+    --secondary-color: #36FFD6;
+    --accent1-color: #00a383;
+    --accent2-color: #ff7700;
+
+    --heading-font: "Audiowide", sans-serif;
+    --paragraph-font: "Allerta Stencil", sans-serif;
+}
+
+#Project-body {
+    font-family: "Allerta Stencil", sans-serif;
+    background-color: #2e3641;
+}
+
+.Project-h1 {
+    text-align: center;
+    border-bottom: 10px;
+    font-family: "Audiowide", sans-serif;
+    background-image: linear-gradient(to bottom, #00a383, #36ffD6);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.Project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+/* Label */
+.Project-label {
+    font-size: x-large;
+    text-align: center;
+    border-bottom: 10px;
+    font-family: "Audiowide", sans-serif;
+    background-image: linear-gradient(to bottom, #00a383, #36ffD6);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Search Bar */
+.Project-input {
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 80%;
+    min-width: 50px;
+    max-width: 400px;
+    border: 2px solid #FF7700;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #FF7700;
+    color: #ff7700;
+    font-size: large;
+}
+
+.Project-input:hover {
+    border: 2px solid #36ffD6;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #00a383;
+}
+
+/* Button */
+#getWeatherButton {
+    margin: 20px;
+    padding: 5px 10px;
+    background-color: #ff7700;
+    color: #36ffd6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#getWeatherButton:hover {
+    color: #ff7700;
+    background-color: #36ffD6;
+}
+
+/* Loading spinner CSS */
+.loader {
+    border: 8px solid #ff7700;
+    border-top: 8px solid #36FFD6;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none; /* Hide spinner by default */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Media Queries */
