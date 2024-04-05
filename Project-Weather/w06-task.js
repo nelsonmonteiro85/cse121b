@@ -5,10 +5,21 @@ async function fetchWeather(location) {
 
     try {
         const response = await fetch(apiUrl);
+
+        // Check for successful HTTP status codes
         if (!response.ok) {
-            throw new Error('Failed to fetch weather data');
+            throw new Error(`Failed to fetch weather data: ${response.status} ${response.statusText}`);
         }
-        return await response.json();
+
+        // Parse the response JSON
+        const weatherData = await response.json();
+
+        // Check if the response contains the expected weather data properties
+        if (!weatherData.main || !weatherData.wind) {
+            throw new Error('Weather data format is invalid');
+        }
+
+        return weatherData;
     } catch (error) {
         throw new Error(`Error fetching weather data: ${error.message}`);
     }
@@ -36,14 +47,14 @@ document.getElementById('getWeatherButton').addEventListener('click', async func
     const location = document.getElementById('locationInput').value.trim();
     if (location) {
         try {
-            showLoadingSpinner(); /* Show spinner when fetching data */
+            showLoadingSpinner(); // Show spinner when fetching data
             const weatherData = await fetchWeather(location);
             displayWeather(weatherData);
         } catch (error) {
             console.error(error.message);
             alert('Failed to fetch weather data. Please try again later.');
         } finally {
-            hideLoadingSpinner(); /* Hide spinner after data is fetched */
+            hideLoadingSpinner(); // Hide spinner after data is fetched
         }
     } else {
         alert('Please enter a location.');
@@ -53,7 +64,7 @@ document.getElementById('getWeatherButton').addEventListener('click', async func
 /* Event listener for Enter key press on the input field */
 document.getElementById('locationInput').addEventListener('keydown', function(event) {
     if (event.keyCode === 13) {
-        event.preventDefault(); /* Prevent default form submission */
-        document.getElementById('getWeatherButton').click(); /* Simulate click on the button */
+        event.preventDefault(); // Prevent default form submission
+        document.getElementById('getWeatherButton').click(); // Simulate click on the button
     }
 });
