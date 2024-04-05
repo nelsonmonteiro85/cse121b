@@ -1,14 +1,10 @@
-/* Function to fetch weather data */
+/* Function to fetch weather data from OpenWeatherMap API */
 async function fetchWeather(location) {
-    const apiKey = 'personal_monteiro_nelsonjorge:5zLJE1Pb3h';
-    const apiUrl = `https://api.meteomatics.com/weather?parameter=temperature_2m,wind_speed_10m,precipitation_sum&lat=${latitude}&lon=${longitude}&start=now&end=2022-01-01T00:00:00Z&interval=1h&model=icon-ep`;
+    const apiKey = '5e2383d42104288b4745132157c02b09';
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(location)}&appid=${apiKey}&units=metric`;
 
     try {
-        const response = await fetch(apiUrl, {
-            headers: {
-                'Authorization': `Basic ${btoa(apiKey)}`
-            }
-        });
+        const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error('Failed to fetch weather data');
         }
@@ -20,9 +16,9 @@ async function fetchWeather(location) {
 
 /* Function to display weather information */
 function displayWeather(weatherData) {
-    document.getElementById('temperature').textContent = `Temperature: ${weatherData.temperature_2m}°C`;
-    document.getElementById('windSpeed').textContent = `Wind Speed: ${weatherData.wind_speed_10m} m/s`;
-    document.getElementById('precipitation').textContent = `Precipitation: ${weatherData.precipitation_sum} mm`;
+    document.getElementById('temperature').textContent = `Temperature: ${weatherData.main.temp}°C`;
+    document.getElementById('windSpeed').textContent = `Wind Speed: ${weatherData.wind.speed} m/s`;
+    document.getElementById('precipitation').textContent = `Humidity: ${weatherData.main.humidity}%`;
 }
 
 /* Function to show loading spinner */

@@ -297,15 +297,14 @@ footer {
 }
 
 #Project-body {
-    font-family: "Allerta Stencil", sans-serif;
     background-color: #2e3641;
 }
 
 .Project-h1 {
     text-align: center;
-    border-bottom: 10px;
+    margin: 100px;
     font-family: "Audiowide", sans-serif;
-    background-image: linear-gradient(to bottom, #00a383, #36ffD6);
+    background-image: linear-gradient(to bottom, #00a383, #36ffD6, #FF7700);
     -webkit-background-clip: text;
     color: transparent;
     display: inline-block;
@@ -358,7 +357,7 @@ footer {
     margin: 20px;
     padding: 5px 10px;
     background-color: #ff7700;
-    font-size: medium;
+    font-size: large;
     color: #36ffd6;
     border: none;
     border-radius: 5px;
@@ -381,6 +380,18 @@ footer {
     margin: 20px auto;
     display: none; /* Hide spinner by default */
 }
+
+#temperature,
+#windSpeed,
+#precipitation {
+    text-align: center;
+    margin: 20px auto;
+    font-family: "Audiowide", sans-serif;
+    background-image: linear-gradient(to bottom, #FF7700, #00a383, #36ffD6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
